@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link href='vista/index.css' rel='stylesheet' type='text/css'/>
+        <script src='JS/FunctionsJS.js'></script>
+    </head>
+    <body>
+
+        <div>xxxx</div><br>
+        <div >
+            <h2>Modal Example</h2>
+            <!-- Trigger the modal with a button -->
+            <button type="button" data-toggle="modal" data-target="#login">Iniciar Sesion</button>
+
+            <!-- Login Div -->
+            <div class="modal fade" id="login" role="dialog">
+                <div class="modal-dialog" id="login-dialog">
+                    <div class="modal-content" id="login-contenido">
+                        <form action='Login' method='post' id="formLogin">
+                            <div class="modal-body" id="login-body">
+                                <div id="login-body-head">                                    
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                Iniciar Sesion
+                                </div>
+                                <div id="login-body-content">
+                                    <div class="login-body-content-cell-left">Usuario:</div>
+                                    <div class="login-body-content-cell-right">
+                                        <input type="text" class="login-input" placeholder="Usuario, Correo o Telefono" name="usr" required>
+                                    </div>
+                                    <div class="login-body-content-cell-left">Contraseña:</div>
+                                    <div class="login-body-content-cell-right">
+                                        <input type="password" class="login-input" placeholder="Contraseña" name="pasw" required>
+                                    </div>
+                                    <div class="login-body-content-cell-left"></div>
+                                    <div class="login-body-content-cell-right">
+                                        <input type="submit" value="Entrar" class="login-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

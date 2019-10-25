@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+                <script src="JS/Chart.js"></script>
+	</head>
+	<body>
+            <h1>21-28 Febrero</h1>
+		<div style="width: 50%">
+			<canvas id="canvas" height="450" width="600"></canvas>
+		</div>
+
+
+	<script>
+	var randomScalingFactor1 = function(){ return 3};
+	var randomScalingFactor2 = function(){ return 4};
+	var randomScalingFactor3 = function(){ return 8};
+	var randomScalingFactor4 = function(){ return 9};
+	var randomScalingFactor5 = function(){ return 3};
+	var randomScalingFactor6 = function(){ return 6};
+	var randomScalingFactor7 = function(){ return 2};
+
+	var barChartData = {
+		labels : ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"],
+		datasets : [
+			{
+				fillColor : "rgba(76,175,80,1)",
+				strokeColor : "rgba(76,175,80,1)",
+				highlightFill: "rgba(76,175,80,.5)",
+				highlightStroke: "rgba(76,175,80,0)",
+				data : [
+                                    randomScalingFactor1(),
+                                    randomScalingFactor2(),
+                                    randomScalingFactor3(),
+                                    randomScalingFactor4(),
+                                    randomScalingFactor5(),
+                                    randomScalingFactor6(),
+                                    randomScalingFactor7()]
+			}
+		]
+
+	}
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {
+			responsive : true
+		});
+	}
+
+	</script>
+	</body>
+</html>

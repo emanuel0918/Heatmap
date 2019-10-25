@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>HeatMap| Registro</title>
+        <meta charset='UTF-8'>
+        <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+        <link href='vista/general.css' rel='stylesheet' type='text/css'/>
+        <link href='vista/registro.css' rel='stylesheet' type='text/css'/>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        <script src='JS/General.js'></script>
+        <script src='JS/Registro.js'></script>
+        <script>
+            window.onload=function(){
+                document.getElementById('showPassid').onchange=function(){
+                    if(document.getElementById('showPassid').checked){
+                        document.getElementById('paswordid').type='text';
+                        document.getElementById('pasword2id').type='text';
+                    }else{
+                        document.getElementById('paswordid').type='password';
+                        document.getElementById('pasword2id').type='password';
+                    }
+                };
+            };
+        </script>
+    </head>
+
+    <body>
+        <div class='head-index'>
+        <nav class='navbar navbar-default'>
+            <div class='container'>
+                <div class='navbar-header'>
+                    <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavBar'>
+                        <span class='icon-bar'></span>
+                        <span class='icon-bar'></span>
+                    </button>
+                    <a class='navbar-brand Inicio' href='index.html'>HeatMap</a>
+                </div>
+                <div class='collapse navbar-collapse' id='myNavBar'>
+                    <ul class='nav navbar-nav'>
+                        <li><a class='btn btn-sucess' href='MapaGeneral'>Ir al mapa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        </div>
+        <div class='contenido-index'>
+        <center>
+        <h1>Registrate</h1>
+        <form action='RegistroUsuario2' method='post'>
+
+            <table class='table-registro'>
+                <tbody>
+                    <tr><td class='table-registro-labels'>Nombre:</td><td class='table-registro-forms'><input class='required' type='text' maxlength='15' name='nombre' placeholder='Nombre' id='nombreid'></td><td class='table-registro-extra' rowspan='4'></td></tr>
+                <tr><td class='table-registro-labels'>Apellido:</td><td class='table-registro-forms'><input class='required' type='text' name='apellido' placeholder='Apellido' id='apellidoid'></td></tr>
+                <tr><td class='table-registro-labels'>Usuario:</td><td class='table-registro-forms'><input class='required' type='text' name='usuario' placeholder='Usuario' id='usuarioid'></td></tr>
+                <tr><td class='table-registro-labels'>Correo Electrónico:</td><td class='table-registro-forms'><input class='required' type='text' name='email' placeholder='Correo Electrónico' id='emailid'></td></tr>
+                <tr><td class='table-registro-labels'>Contraseña:</td><td class='table-registro-forms'><input class='required' type='password' name='pasword' placeholder='Contraseña' id='paswordid'></td><td class='table-registro-extra' rowspan='2'><input type='checkbox' id='showPassid'>&nbsp;<img src='http://i.imgur.com/mziTaCM.png'></td></tr>
+                <tr><td class='table-registro-labels'>Confirma tu nueva contraseña:</td><td class='table-registro-forms'><input class='required' type='password' name='pasword2' placeholder='Confirma tu nueva contraseña' id='pasword2id'></td></tr>
+                <tr><td class='table-registro-labels'>Teléfono:</td><td class='table-registro-forms'><input class='required' type='text' name='telefono' placeholder='Teléfono' id='telefonoid' maxlength='15'></td><td class='table-registro-extra' rowspan='4'></td></tr>
+                <tr><td class='table-registro-labels'>Fecha de Nacimiento:</td><td class='table-registro-forms'><input class='required' type='date' name='fecha' id='fechaid'></td></tr>
+                <tr><td class='table-registro-labels'>Sexo:</td><td class='table-registro-forms'><table class='nopadding'><tbody><tr><td><input type='radio' name='sex' id='sex1id' value='M' checked=''></td><td>Masculino</td></tr><tr><td><input type='radio' name='sex' id='sex2id' value='F'></td><td>Femenino</td></tr></tbody></table></td></tr>
+                <tr><td class='table-registro-labels'></td><td class='table-registro-forms'><input class='enviar' type='submit' value='Enviar' id='registroUsuario'></td></tr>
+            </tbody></table>
+        </form></center>
+        </div>
+    <div>
+        <p>HeatMap&COPY; CopyRigth 2015.</p>
+    </div>
+
+</body>
+</html>
