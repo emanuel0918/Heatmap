@@ -36,7 +36,7 @@ public class SendMail {
         String emailBody = cuerpo;
         generateMailMessage.setContent(emailBody, "text/html");
         Transport transport = getMailSession.getTransport("smtp");
-        transport.connect("smtp.gmail.com", "heatmap.quanthink@gmail.com", "HEATMAP00");
+        transport.connect("smtp.gmail.com", "foo@email.com", "mot_de_passe");
         transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
         transport.close();
     }

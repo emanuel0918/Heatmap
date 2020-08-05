@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>HeatMap</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel='icon' type='image/png' href='http://i.imgur.com/mQI4Lqp.png' />
+        <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+        <link href='vista/general.css' rel='stylesheet' type='text/css'/>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        <script src='JS/General.js'></script>
+    </head>
+    <body onload='backButton();' >
+        <div id='all'>
+        <div class='head-index'>
+            <nav class='navbar navbar-default'>
+                <div class='container central' >
+                    <div class='navbar-header'>
+                        <button type='button' class='navbar-toggle' id='hamburguer-menu' data-toggle='collapse' data-target='#myNavBar'>
+                            <span class='icon-bar' id='hamburguer-bar'></span>
+                            <span class='icon-bar' id='hamburguer-bar'></span>
+                            <span class='icon-bar' id='hamburguer-bar'></span>
+                        </button>
+                        <a class='navbar-brand Inicio' href='HeatMap'>HeatMap</a>
+                    </div>
+                    <div class='collapse navbar-collapse' id='myNavBar'>
+                        <ul class='nav navbar-nav navbar-right'>
+                            <li ><a href='Login'>Cerrar Sesion</a>
+                            </li>
+                            <li >
+                            <button class='btn btn-sucess dropdown-toggle' 
+                                    type='button' data-toggle='modal' 
+                                    data-target='#login'>
+                                Iniciar Sesion                                                              
+                            </button>
+                            </li>
+                            <li class='dropdown'>
+                            <button class='btn btn-sucess dropdown-toggle' 
+                                    type='button' data-toggle='dropdown'>
+                                Mapa
+                                <span class='caret'></span>                                                                
+                            </button>
+                            <ul class='dropdown-menu'>
+                                <li><a href='MapaGeneral'>Mapa General</a></li>
+                                <li><a  class='style1' href='MapaDelictivo'>Mapa Delictivo</a></li>
+                            </ul>
+                            </li>
+                             <li class='dropdown'>
+                            <button class='btn btn-sucess dropdown-toggle' 
+                                    type='button' data-toggle='dropdown'>
+                                Idiomas
+                                <span class='caret'></span>                                                                
+                            </button>
+                            <ul class='dropdown-menu'>
+                                <li><a  class='style1' href='http://localhost:8080/heatmap/HeatMap?leng=es'>Español</a></li>
+                                <li><a  class='style1' href='http://localhost:8080/heatmap/HeatMap?leng=en'>Ingles</a></li>
+                            </ul>
+                            </li>
+                            <li class='dropdown' id='li-scaled-img'>
+                            <button class='btn btn-sucess dropdown-toggle' 
+                                    type='button' data-toggle='dropdown' id='button-scaled-img'>
+                                <img alt='Usuario' src='http://i.imgur.com/6cY0syl.png'
+                                     class='img-circular'/>Emanuel
+                                <span class='caret'></span>                                                                
+                            </button>
+                            <ul class='dropdown-menu'>
+                                <li><a href='/heatmap/Profile'><span class='opv fa fa-child'></span>&nbsp;&nbsp;Mi Perfil</a></li>
+                                <li><a  href='/heatmap/Config'><span class='opv fa fa-bars'></span>&nbsp;&nbsp;Configuracion</a></li>
+                                <li><a  class='style1' href='/heatmap/Logout'><span class='opv fa fa-cog'></span>&nbsp;&nbsp;Cerrar Sesión</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id='main-home' class='contenido-index'>
+            <div class="contenido-lista" style="padding: 5%;">
+                <br>
+                <a class="link-no-decoration" href="http://www.w3schools.com/" target="iframe-contenido">Cambiar datos de la cuenta</a>
+                <br><hr color="gray"><br>
+                Privacidad
+                <br><hr color="gray"><br>
+                
+                
+            </div>
+            <div class="contenido-iframe" >
+                <iframe  class="contenido-iframe-body" name="iframe-contenido"></iframe>
+            </div>
+        </div>
+        <input type='hidden' id='refreshed' value='no'>
+        
+        <div class='modal fade' id='login' role='dialog'>
+                <div class='modal-dialog' id='login-dialog'>
+                    <div class='modal-content' id='login-contenido'>
+                        <form action='Login' method='post' id='formLogin'>
+                            <div class='modal-body' id='login-body'>
+                                <div id='login-body-head'>                                    
+                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                Iniciar Sesion
+                                </div>
+                                <div id='login-body-content'>
+                                    <div class='login-body-content-cell-left'>Usuario:</div>
+                                    <div class='login-body-content-cell-right'>
+                                        <input type='text' id='login-input' placeholder='Usuario, Correo o Telefono' name='usr' required>
+                                        <input type='hidden' id='idurl' name='url'>
+                                    </div>
+                                    <div class='login-body-content-cell-left'>Contraseña:</div>
+                                    <div class='login-body-content-cell-right'>
+                                        <input type='password' id='login-input' placeholder='Contraseña' name='pasw' required>
+                                    </div>
+                                    <div class='login-body-content-cell-left'></div>
+                                    <div class='login-body-content-cell-right'>
+                                        <input type='submit' value='Entrar' id='login-input' class='btn btn-default'>
+                                    </div>
+                                </div>
+                                <div id='login-body-footer'>
+                                    <br>
+                                    <a href='OlvidarContrasena'>¿Olvidaste tu contraseña?</a>
+                                        <br>
+                                        ¿No tienes una cuenta en HeatMap? <a
+                                            href='RegistroUsuario1'>Registrate aqui</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

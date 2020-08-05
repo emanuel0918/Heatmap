@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Upload Image</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel='icon' type='image/png' href='http://i.imgur.com/mQI4Lqp.png' />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src='JS/Registro.js'>
+        </script>
+    </head>
+    <body   >
+    <center>
+        <form name='partname' action="ImageUpload" method="post" enctype="multipart/form-data">
+        <input type="file" name="imagen" onchange="readURL(this)">
+        
+        <br>
+        <img id="imagen-id" >
+        <br>
+        <input type="submit" value="Guardar">
+        </form>
+    </center>
+    </body>
+</html>
+
+
