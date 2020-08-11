@@ -1,5 +1,5 @@
 # Heatmap
-Web Application that warns the community from the crime in the cities using a map that marks the dangerous zones.
+Heatmap is a software that warns the community from the crime in the cities using a map that marks the dangerous zones.
 
 FrontEnd: HTML, CSS, Bootstrap, JavaScript and Google Maps API.
 
